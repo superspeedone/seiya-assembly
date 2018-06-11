@@ -1,13 +1,8 @@
 package com.seiya.concurrent.thread;
 
-import org.apache.http.annotation.ThreadSafe;
-
-import java.util.Collections;
-
 /**
  * 线程终端测试
  */
-@ThreadSafe
 public class ThreadInterruptTest {
 
     public static void main(String[] args) {
