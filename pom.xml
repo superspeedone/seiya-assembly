@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.seiya.assembly</groupId>
+  <artifactId>seiya-assembly</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>seiya-mybatis</module>
+    <module>seiya-spring</module>
+    <module>seiya-concurrent</module>
+    <module>seiya-commons</module>
+    <module>seiya-design-patterns</module>
+    <module>seiya-rpc</module>
+  </modules>
+  <packaging>pom</packaging>
+
+  <name>seiya-assembly</name>
+  <url>http://www.example.com</url>
+
+  <properties>
+    <!-- environment version setting -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+
+    <!-- spring version setting -->
+    <spring.version>4.1.7.RELEASE</spring.version>
+    <aspectjweaver.version>1.8.7</aspectjweaver.version>
+
+    <!-- mybatis version setting -->
+    <mybatis.version>3.3.0</mybatis.version>
+    <mybatis.spring>1.2.2</mybatis.spring>
+    <mysql.driver.version>5.1.40</mysql.driver.version>
+    <druid.version>1.0.2</druid.version>
+
+    <!-- servlet/jstl version setting -->
+    <servlet.version>2.5</servlet.version>
+    <jstl.version>1.2</jstl.version>
+    <jsp-api.version>2.0</jsp-api.version>
+    <standard.version>1.1.2</standard.version>
+
+    <!-- proxy -->
+    <cglib.verion>2.2</cglib.verion>
+
+    <!-- json version setting -->
+    <gson.version>2.3</gson.version>
+    <fastjson.version>1.2.28</fastjson.version>
+    <jackson.version>2.8.4</jackson.version>
+    <jackson-annotations.version>2.8.7</jackson-annotations.version>
+
+    <!-- httpclient version setting -->
+    <httpclient.version>4.3.6</httpclient.version>
+    <httpcore.version>4.3.2</httpcore.version>
+    <commons-net.version>3.3</commons-net.version>
+
+    <!-- log version setting -->
+    <log4j2.version>2.8.1</log4j2.version>
+    <slf4j.version>1.7.25</slf4j.version>
+
+    <!-- commmons -->
+    <commons-io.version>2.4</commons-io.version>
+    <commons-codec.version>1.6</commons-codec.version>
+    <commons-lang.version>2.4</commons-lang.version>
+    <commons-lang3.version>3.5</commons-lang3.version>
+    <commons-net.version>3.3</commons-net.version>
+
+    <!-- xml parser -->
+    <dom4j.version>2.0.1</dom4j.version>
+
+    <!-- cache -->
+    <jedis.version>2.9.0</jedis.version>
+    <spring.data.redis.version>1.6.1.RELEASE</spring.data.redis.version>
+
+    <!-- dubbo version setting -->
+    <dubbo.version>2.5.3</dubbo.version>
+
+    <!-- zookeeper version setting -->
+    <zkclient.version>0.2</zkclient.version>
+    <zookeeper.version>3.4.8</zookeeper.version>
+
+    <junit.version>4.11</junit.version>
+
+    <!-- maven plugins version setting -->
+    <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+    <maven-war-plugin.version>2.4</maven-war-plugin.version>
+    <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
+    <maven-dependency-plugin.version>2.0</maven-dependency-plugin.version>
+    <maven-jar-plugin.version>2.2</maven-jar-plugin.version>
+    <maven-surefire-plugin.version>2.4.3</maven-surefire-plugin.version>
+    <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
+    <wtpversion.version>2.0</wtpversion.version>
+
+  </properties>
+
+  <!-- set the main maven repository, look up in the the set order -->
+  <repositories>
+    <repository>
+      <id>nexus-aliyun</id>
+      <name>Nexus aliyun</name>
+      <layout>default</layout>
+      <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+  </repositories>
+
+  <!-- set the plugin respository -->
+  <pluginRepositories>
+    <pluginRepository>
+      <id>nexus-aliyun</id>
+      <name>Nexus aliyun</name>
+      <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- spring依赖jar包 -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-oxm</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <!-- spring增强包  -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context-support</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+
+      <!-- srpingMVC依赖jar包 -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+
+      <!-- AOP事务管理依赖jar包 -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-tx</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aspects</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+        <version>${aspectjweaver.version}</version>
+      </dependency>
+
+      <!-- mybatis依赖jar包 -->
+      <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis</artifactId>
+        <version>${mybatis.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis-spring</artifactId>
+        <version>${mybatis.spring}</version>
+      </dependency>
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.driver.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid</artifactId>
+        <version>${druid.version}</version>
+      </dependency>
+
+      <!-- Servlet相关jar包 -->
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>${servlet.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>${jstl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet.jsp</groupId>
+        <artifactId>jsp-api</artifactId>
+        <version>${jsp-api.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>taglibs</groupId>
+        <artifactId>standard</artifactId>
+        <version>${standard.version}</version>
+      </dependency>
+
+      <!-- log4j 日志 -->
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-api</artifactId>			<!--核心log4j2jar包 -->
+        <version>${log4j2.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>${log4j2.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-slf4j-impl</artifactId>   <!-- 桥接：告诉Slf4j使用Log4j2 -->
+        <version>${log4j2.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-jcl</artifactId>  		<!-- 桥接：告诉commons logging使用Log4j2 -->
+        <version>${log4j2.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>			<!-- slf4j 日志接口 -->
+        <version>${slf4j.version}</version>
+      </dependency>
+
+      <!-- 阿里fastjson依赖jar包 -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>${fastjson.version}</version>
+      </dependency>
+      <!-- google gson依赖jar包 -->
+      <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>${gson.version}</version>
+      </dependency>
+      <!-- jackson数据绑定依赖jar包 -->
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId> <!--jackson json:高性能的JSON处理 -->
+        <version>${jackson.version}</version>
+      </dependency>
+      <!-- jackson bean注解依赖jar包 -->
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${jackson-annotations.version}</version>
+      </dependency>
+
+      <!-- 网络和io相关jar包 -->
+      <dependency>
+        <groupId>commons-net</groupId>
+        <artifactId>commons-net</artifactId>
+        <version>${commons-net.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>${commons-io.version}</version>
+      </dependency>
+
+      <!-- http请求相关jar包 -->
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>${httpclient.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpcore</artifactId>
+        <version>${httpcore.version}</version>
+      </dependency>
+
+      <!-- dubbo服务提供者依赖 -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>dubbo</artifactId>
+        <version>${dubbo.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- zookeeper依赖包 -->
+      <dependency>
+        <groupId>com.101tec</groupId>
+        <artifactId>zkclient</artifactId>
+        <version>${zkclient.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.zookeeper</groupId>
+        <artifactId>zookeeper</artifactId>
+        <version>${zookeeper.version}</version>
+      </dependency>
+
+      <!-- redis依赖包 -->
+      <dependency>
+        <groupId>redis.clients</groupId>
+        <artifactId>jedis</artifactId>
+        <version>${jedis.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-redis</artifactId>
+        <version>${spring.data.redis.version}</version>
+      </dependency>
+
+      <!-- proxy动态代理 -->
+      <dependency>
+        <groupId>cglib</groupId>
+        <artifactId>cglib-nodep</artifactId>
+        <version>${cglib.verion}</version>
+      </dependency>
+
+      <!-- Commons项目中用来处理Java基本对象方法的工具类包 -->
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${commons-lang3.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>${commons-codec.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-lang</groupId>
+        <artifactId>commons-lang</artifactId>
+        <version>${commons-lang.version}</version>
+      </dependency>
+
+      <!-- xml parser -->
+      <dependency>
+        <groupId>org.dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+        <version>${dom4j.version}</version>
+      </dependency>
+
+      <!-- spring junit test -->
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+        <scope>test</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>${spring.version}</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <finalName>${project.name}</finalName>
+    <!-- plugin manage  -->
+    <pluginManagement>
+      <!-- maven-eclipse-plugin:将maven项目转成eclipse项目（mvn eclipse:eclipse） -->
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-eclipse-plugin</artifactId>
+          <version>${maven-eclipse-plugin.version}</version>
+          <configuration>
+            <downloadSources>true</downloadSources>
+            <downloadJavadocs>false</downloadJavadocs>
+            <wtpversion>${wtpversion.version}</wtpversion>
+          </configuration>
+        </plugin>
+
+        <!-- maven-compiler-plugin:编译插件(maven-compiler-plugin用来编译Java代码) -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven-compiler-plugin.version}</version>
+          <configuration>
+            <!-- 源代码使用的开发版本 -->
+            <source>${maven.compiler.source}</source>
+            <!-- 需要生成的目标class文件的编译版本 -->
+            <target>${maven.compiler.target}</target>
+            <encoding>${project.build.sourceEncoding}</encoding>
+            <!-- 引入java安全包和java.lang包 -->
+            <compilerArguments>
+              <verbose />
+              <!-- 这个配置很特殊：windows下使用分号（;）分隔，linux/mac下使用冒号（:）分隔 -->
+              <bootclasspath>${java.home}/lib/rt.jar:${java.home}/lib/jce.jar</bootclasspath>
+            </compilerArguments>
+          </configuration>
+        </plugin>
+
+        <!-- maven打包插件 -->
+        <!--解决update时报错：An internal error occurred during: "Updating Maven Dependencies".Lorg/codehaus/plexus/archiver/jar/JarArchiver;-->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${maven-jar-plugin.version}</version>
+          <executions>
+            <execution>
+              <phase>package</phase>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- maven-surefire-plugin:不执行测试用例，也不编译测试用例类。 -->
+        <!--解决运行buildl时找不到跳过测试包的问题，默认依赖maven-surefire-plugin-2.10版本会有问题，这里指定低版本号-->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven-surefire-plugin.version}</version>
+          <configuration>
+            <skip>true</skip>
+            <testFailureIgnore>true</testFailureIgnore>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
