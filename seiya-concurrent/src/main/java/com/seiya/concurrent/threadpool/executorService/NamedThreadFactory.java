@@ -1,4 +1,4 @@
-package com.seiya.concurrent.threadpool.executorService;
+package com.seiya.concurrent.threadpool.ExecutorService;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
@@ -98,7 +98,7 @@ public class NamedThreadFactory implements ThreadFactory {
 
     }
 
-    public static class Builder implements com.seiya.concurrent.threadpool.executorService.Builder<NamedThreadFactory> {
+    public static class Builder implements com.seiya.concurrent.threadpool.ExecutorService.Builder<NamedThreadFactory> {
         private ThreadFactory wrappedFactory;
         private UncaughtExceptionHandler exceptionHandler;
         private String namingPattern;

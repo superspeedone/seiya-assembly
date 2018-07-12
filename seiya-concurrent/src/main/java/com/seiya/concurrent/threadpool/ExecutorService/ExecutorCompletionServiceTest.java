@@ -1,4 +1,4 @@
-package com.seiya.concurrent.threadpool.executorService;
+package com.seiya.concurrent.threadpool.ExecutorService;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.*;
