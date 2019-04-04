@@ -31,7 +31,7 @@ public class ExecutorCompletionServiceTest {
             System.out.println(futureList.get(i).get());
         }
         // close threadPool
-        ExecutorServiceFactory.getExecutor().shutdown();
+        //ExecutorServiceFactory.getExecutor().shutdown();
     }
 }
 

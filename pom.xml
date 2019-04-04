@@ -14,6 +14,8 @@
     <module>seiya-commons</module>
     <module>seiya-design-patterns</module>
     <module>seiya-rpc</module>
+    <module>seiya-activemq</module>
+      <module>seiya-rocketmq</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -23,8 +25,8 @@
   <properties>
     <!-- environment version setting -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
 
     <!-- spring version setting -->
     <spring.version>4.1.7.RELEASE</spring.version>
@@ -80,6 +82,9 @@
     <!-- zookeeper version setting -->
     <zkclient.version>0.2</zkclient.version>
     <zookeeper.version>3.4.8</zookeeper.version>
+
+    <!-- activemq version setting -->
+    <activemq.version>5.11.2</activemq.version>
 
     <junit.version>4.11</junit.version>
 
@@ -346,6 +351,13 @@
         <groupId>org.springframework.data</groupId>
         <artifactId>spring-data-redis</artifactId>
         <version>${spring.data.redis.version}</version>
+      </dependency>
+
+      <!-- activemq消息中间件 -->
+      <dependency>
+        <groupId>org.apache.activemq</groupId>
+        <artifactId>activemq-all</artifactId>
+        <version>${activemq.version}</version>
       </dependency>
 
       <!-- proxy动态代理 -->
