@@ -16,6 +16,7 @@
     <module>seiya-rpc</module>
     <module>seiya-activemq</module>
       <module>seiya-rocketmq</module>
+      <module>seiya-cache</module>
   </modules>
   <packaging>pom</packaging>
 

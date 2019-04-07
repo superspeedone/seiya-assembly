@@ -1,4 +1,4 @@
-package com.seiya.openservices.tcp.consumer;
+package com.seiya.rocketmq.openservices.tcp.consumer;
 
 import com.aliyun.openservices.ons.api.Message;
 import com.aliyun.openservices.ons.api.ONSFactory;
@@ -7,7 +7,7 @@ import com.aliyun.openservices.ons.api.order.ConsumeOrderContext;
 import com.aliyun.openservices.ons.api.order.MessageOrderListener;
 import com.aliyun.openservices.ons.api.order.OrderAction;
 import com.aliyun.openservices.ons.api.order.OrderConsumer;
-import com.seiya.openservices.tcp.MqConfig;
+import com.seiya.rocketmq.openservices.tcp.MqConfig;
 
 import java.util.Date;
 import java.util.Properties;

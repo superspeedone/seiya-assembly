@@ -1,4 +1,4 @@
-package com.seiya.openservices.tcp.producer;
+package com.seiya.rocketmq.openservices.tcp.producer;
 
 import com.aliyun.openservices.ons.api.Message;
 import com.aliyun.openservices.ons.api.ONSFactory;
@@ -6,7 +6,7 @@ import com.aliyun.openservices.ons.api.PropertyKeyConst;
 import com.aliyun.openservices.ons.api.SendResult;
 import com.aliyun.openservices.ons.api.exception.ONSClientException;
 import com.aliyun.openservices.ons.api.order.OrderProducer;
-import com.seiya.openservices.tcp.MqConfig;
+import com.seiya.rocketmq.openservices.tcp.MqConfig;
 
 import java.util.Date;
 import java.util.Properties;
@@ -28,10 +28,10 @@ public class SimpleOrderProducer {
         producer.start();
         System.out.println("Order Producer Started");
 
-        for (int i = 26; i < 30; i++) {
+        for (int i = 1; i < 30; i++) {
             Message msg = new Message(MqConfig.ORDER_TOPIC, MqConfig.TAG, "mq send order message test".getBytes());
             // 设置代表消息的业务关键属性，请尽可能全局唯一。
-            String orderId = "biz_" + i;
+            String orderId = "biz_" + i % 10;
             msg.setKey(orderId);
             // 分区顺序消息中区分不同分区的关键字段，sharding key于普通消息的key是完全不同的概念。
             // 全局顺序消息，该字段可以设置为任意非空字符串。

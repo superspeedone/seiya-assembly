@@ -1,4 +1,4 @@
-package com.seiya.openservices.tcp.producer;
+package com.seiya.rocketmq.openservices.tcp.producer;
 
 import com.aliyun.openservices.ons.api.Message;
 import com.aliyun.openservices.ons.api.ONSFactory;
@@ -9,7 +9,7 @@ import com.aliyun.openservices.ons.api.transaction.LocalTransactionChecker;
 import com.aliyun.openservices.ons.api.transaction.LocalTransactionExecuter;
 import com.aliyun.openservices.ons.api.transaction.TransactionProducer;
 import com.aliyun.openservices.ons.api.transaction.TransactionStatus;
-import com.seiya.openservices.tcp.MqConfig;
+import com.seiya.rocketmq.openservices.tcp.MqConfig;
 
 import java.util.Date;
 import java.util.Properties;

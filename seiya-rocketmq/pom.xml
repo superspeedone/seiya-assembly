@@ -29,6 +29,13 @@
             <version>1.8.0.Final</version>
         </dependency>
 
+        <!-- 开源版apache rocketmq -->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>4.5.0</version>
+        </dependency>
+
         <!-- spring依赖 -->
         <dependency>
             <groupId>org.springframework</groupId>

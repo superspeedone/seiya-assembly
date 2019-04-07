@@ -5,11 +5,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.*;
 
 /**
- * 项目名称：seiya-assembly
- * 类名称：JMSTopicPruducer
- * 类描述：JMSTopicPruducer /
- * 创建人：yanweiwen
- * 创建时间：2019/4/4 09:47
+ * JMSTopicPruducer 消息生产者
  */
 public class JMSTopicPruducer {
 

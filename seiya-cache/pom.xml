@@ -9,9 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>seiya-design-patterns</artifactId>
+    <artifactId>seiya-cache</artifactId>
 
-    <name>seiya-design-patterns</name>
+    <name>seiya-cache</name>
+    <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
     <properties>
@@ -21,10 +22,14 @@
     </properties>
 
     <dependencies>
-
+        <!-- redis依赖包 -->
         <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib-nodep</artifactId>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
         </dependency>
 
         <dependency>

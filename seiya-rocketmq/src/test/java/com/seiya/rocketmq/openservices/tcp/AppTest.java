@@ -1,4 +1,4 @@
-package com.seiya.openservices.tcp;
+package com.seiya.rocketmq.openservices.tcp;
 
 import static org.junit.Assert.assertTrue;
 

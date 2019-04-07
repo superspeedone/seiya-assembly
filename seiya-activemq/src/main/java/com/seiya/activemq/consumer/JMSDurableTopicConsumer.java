@@ -5,7 +5,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.*;
 
 /**
- * Hello world!
+ * 离线消息消费
  */
 public class JMSDurableTopicConsumer {
 

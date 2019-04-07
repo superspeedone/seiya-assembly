@@ -1,7 +1,7 @@
-package com.seiya.openservices.tcp;
+package com.seiya.rocketmq.openservices.tcp;
 
 /**
- * 项目名称：seiya-assembly
+ * 项目名称：seiya-cache
  * 类名称：MqConfig
  * 类描述：MqConfig / 配置文件
  * 创建人：yanweiwen
