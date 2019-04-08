@@ -6,7 +6,6 @@ import com.aliyun.openservices.ons.api.PropertyKeyConst;
 import com.aliyun.openservices.ons.api.order.ConsumeOrderContext;
 import com.aliyun.openservices.ons.api.order.MessageOrderListener;
 import com.aliyun.openservices.ons.api.order.OrderAction;
-import com.aliyun.openservices.ons.api.order.OrderConsumer;
 import com.seiya.rocketmq.openservices.tcp.MqConfig;
 
 import java.util.Date;
@@ -15,7 +14,7 @@ import java.util.Properties;
 /**
  * MQ 接收消息示例 Demo
  */
-public class SimpleOrderConsumer {
+public class OrderConsumer {
 
     public static void main(String[] args) {
         Properties consumerProperties = new Properties();
@@ -27,7 +26,7 @@ public class SimpleOrderConsumer {
         // properties.put(PropertyKeyConst.MessageModel, PropertyValueConst.CLUSTERING);
         // 广播订阅方式
         // properties.put(PropertyKeyConst.MessageModel, PropertyValueConst.BROADCASTING);
-        OrderConsumer consumer = ONSFactory.createOrderedConsumer(consumerProperties);
+        com.aliyun.openservices.ons.api.order.OrderConsumer consumer = ONSFactory.createOrderedConsumer(consumerProperties);
         consumer.subscribe(MqConfig.ORDER_TOPIC, MqConfig.TAG,  new MessageOrderListener() {
 
             @Override

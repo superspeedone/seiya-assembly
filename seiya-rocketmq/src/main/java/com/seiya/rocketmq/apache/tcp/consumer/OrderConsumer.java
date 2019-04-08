@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 顺序消费
  */
-public class SimpleOrderConsumer {
+public class OrderConsumer {
 
     public static void main(String[] args) throws Exception {
         // 开启消息轨迹跟踪

@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * 顺序消息
  */
-public class SimpleOrderProducer {
+public class OrderMsgProducer {
 
     public static void main(String[] args) throws Exception {
         //Instantiate with a producer group name.  开启消息轨迹跟踪
@@ -27,7 +27,7 @@ public class SimpleOrderProducer {
         producer.start();
         String[] tags = new String[]{"TagA", "TagC", "TagD"};
         // 订单列表
-        List<OrderDemo> orderList =  new SimpleOrderProducer().buildOrders();
+        List<OrderDemo> orderList =  new OrderMsgProducer().buildOrders();
         SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         for (int i = 0; i < 12; i++) {

@@ -17,7 +17,7 @@ import java.util.Properties;
 /**
  * MQ 发送事务消息示例 Demo
  */
-public class SimpleTransactionProducer {
+public class TransactionMsgProducer {
 
     public static void main(String[] args) {
         Properties tranProducerProperties = new Properties();

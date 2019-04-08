@@ -14,7 +14,7 @@ import java.util.Properties;
 /**
  * MQ发送普通消息示例 Demo
  */
-public class SimpleOrderProducer {
+public class OrderMsgProducer {
 
 
     public static void main(String[] args) {

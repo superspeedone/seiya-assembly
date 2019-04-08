@@ -10,7 +10,7 @@ import java.util.Properties;
 /**
  * MQ发送定时消息示例 Demo
  */
-public class MQTimerProducer {
+public class TimerMsgProducer {
     public static void main(String[] args) {
         Properties producerProperties = new Properties();
         producerProperties.setProperty(PropertyKeyConst.GROUP_ID, MqConfig.GROUP_ID);

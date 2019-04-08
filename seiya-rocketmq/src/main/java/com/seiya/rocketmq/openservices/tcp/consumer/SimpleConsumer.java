@@ -7,14 +7,14 @@ import java.util.Date;
 import java.util.Properties;
 
 /**
- * MQ 接收消息示例 Demo
+ * MQ 接收消息示例 Demo （默认为集群消费模式）
  */
-public class SimpleTransactionConsumer {
+public class SimpleConsumer {
 
     public static void main(String[] args) {
         // 设置属性 topic group_id 等
         Properties consumerProperties = new Properties();
-        consumerProperties.setProperty(PropertyKeyConst.GROUP_ID, MqConfig.TRANSACTION_GROUP_ID);
+        consumerProperties.setProperty(PropertyKeyConst.GROUP_ID, MqConfig.GROUP_ID);
         consumerProperties.setProperty(PropertyKeyConst.AccessKey, MqConfig.ACCESS_KEY);
         consumerProperties.setProperty(PropertyKeyConst.SecretKey, MqConfig.SECRET_KEY);
         consumerProperties.setProperty(PropertyKeyConst.NAMESRV_ADDR, MqConfig.NAMESRV_ADDR);

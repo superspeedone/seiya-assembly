@@ -12,6 +12,10 @@ import java.util.Properties;
  */
 public class SimpleMQProducer {
 
+    /**
+     * 消息队列 RocketMQ 发送普通消息有三种实现方式：可靠同步发送、可靠异步发送、单向（Oneway）发送
+     * 参考 https://help.aliyun.com/document_detail/29547.html?spm=a2c4g.11186623.6.566.47db54d4KNtlzc
+     */
 
     public static void main(String[] args) {
         // 设置属性 topic group_id 等

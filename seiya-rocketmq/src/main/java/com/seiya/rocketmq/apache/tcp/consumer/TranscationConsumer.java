@@ -12,17 +12,17 @@ import java.util.List;
 /**
  * 消息消费者
  */
-public class SimpleMQConsumer {
+public class TranscationConsumer {
 
     public static void main(String[] args) throws Exception {
         // Instantiate with specified consumer group name.
-        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(MqConfig.CONSUMER_GROUP_ID);
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(MqConfig.CONSUMER_TRANSACTION_GROUP_ID);
 
         // Specify name server addresses.
         consumer.setNamesrvAddr(MqConfig.NAMESRV_ADDR);
 
         // Subscribe one more more topics to consume.
-        consumer.subscribe(MqConfig.TOPIC, "*");
+        consumer.subscribe(MqConfig.TRANSACTION_TOPIC, "*");
         // Register callback to execute on arrival of messages fetched from brokers.
         consumer.registerMessageListener(new MessageListenerConcurrently() {
 

@@ -13,12 +13,12 @@ import java.util.concurrent.*;
 
 /**
  * 项目名称：seiya-assembly
- * 类名称：SimpleTransactionProducer
- * 类描述：SimpleTransactionProducer /
+ * 类名称：TransactionMsgProducer
+ * 类描述：TransactionMsgProducer /
  * 创建人：yanweiwen
  * 创建时间：2019/4/6 22:06
  */
-public class SimpleTransactionProducer {
+public class TransactionMsgProducer {
 
     public static void main(String[] args) throws MQClientException, InterruptedException {
         TransactionListener transactionListener = new TransactionListenerImpl();
