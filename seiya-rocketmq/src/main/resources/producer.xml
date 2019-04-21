@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="producer" class="com.seiya.rocketmq.apache.tcp.api.bean.OrderProducerBean" init-method="start" destroy-method="shutdown">
+        <!-- Spring 接入方式支持 Java SDK 支持的所有配置项 -->
+        <property name="properties" > <!--生产者配置信息-->
+            <props>
+                <prop key="GroupId">GID_PRODUCER_ORDER_TEST</prop>
+                <prop key="NameSrvAddr">localhost:9876</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
